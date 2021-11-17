@@ -3,4 +3,13 @@
   <p> <%= @restaurant.phone_number %></p>
   <p> <%= @restaurant.category.capitalize %></p>
 
-<%= link_to "Back to menu", restaurants_path %></h3>
+
+    <% @restaurant.reviews.each do |review| %>
+      <ul>
+        <li> <%= review.content %> </li>
+      </ul>
+    <% end %>
+
+  <%= link_to "Add a review", new_restaurant_review_path(@restaurant[:id]) %>
+
+  <%= link_to "Back to menu", restaurants_path %></h3>
