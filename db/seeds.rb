@@ -22,7 +22,7 @@ end
 
 10.times do
   review = Review.new(
-    restaurant_id: rand(Restaurant.first.id...Restaurant.last.id),
+    restaurant_id: rand(Restaurant.first.id...Restaurant.last.id), ##Uma ID nunca é apagada, então, ela nunca apaga
     rating: rand(1...5),
     content: Faker::Restaurant.review
   )
